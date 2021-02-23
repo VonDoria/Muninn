@@ -1,0 +1,65 @@
+@import "global.css";
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&display=swap');
+
+.searchArea
+{
+    position: absolute;
+    bottom: 10vh;
+    left: 35vw;
+    background: transparent;
+    transition: .5s;
+    width: 30vw;
+    height: 5vh;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    overflow: hidden;
+    background: var(--shadow);
+    opacity: .4;
+}
+
+.searchArea:hover
+{
+    opacity: 1;
+}
+
+.searchArea:focus-within
+{
+    opacity: 1;
+}
+
+.searchArea input
+{
+    width: 90%;
+    border: none;
+    background: transparent;
+    margin: auto 3%;
+    color: var(--fonts);
+    font-family: 'Balsamiq Sans';
+}
+
+.searchArea input:focus
+{
+    outline: none;
+}
+
+.searchArea a
+{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+.searchArea a:hover
+{
+    box-shadow: inset 0px 0px 50px #555;
+}
+
+@media only screen and (max-width: 850px) {
+    .searchArea {
+        display: none;
+    }
+}

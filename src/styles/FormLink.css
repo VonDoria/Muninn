@@ -1,0 +1,190 @@
+@import "global.css";
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&display=swap');
+
+.formLink
+{
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    background: var(--form);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 5% 0;
+    z-index: 1;
+    transition: 1s ease-in-out;
+}
+
+.formLink .closeForm
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10%;
+    height: 5%;
+    color: var(--icons);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+.formLink .closeForm svg
+{
+    z-index: -1;
+}
+
+.formLink .closeForm:hover
+{
+    background: var(--transparent);
+    color: var(--white);
+}
+
+.formLink .top
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+}
+
+.formLink .top div:first-child
+{
+    width: 50%;
+    height: 20%;
+}
+
+.formLink .top div .select
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 3px 3px 2px #555;
+    overflow: hidden;
+    user-select: none;
+    transition: .5s ease-in-out;
+}
+
+.formLink .top div .select:hover
+{
+    height: fit-content;
+    box-shadow: 3px 3px 30px 10px #555;
+}
+
+.formLink .top div .select div, input, span
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3.6vh;
+    user-select: none;
+    background: var(--white);
+}
+
+.formLink .top div .select div
+{
+    border-top: solid 2px #ccc;
+    cursor: pointer;
+}
+
+.formLink .top div .select div:hover
+{
+    background: var(--whiteShadow);
+}
+
+.formLink .top div .select input
+{
+    border: none;
+    padding: 0 5px;
+}
+
+.formLink .top div .select input:focus
+{
+    outline: none;
+}
+
+.formLink .top .preview
+{
+    width: 80%;
+    height: 7vh;
+    border-radius: 10px;
+    background: var(--white);
+    border: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 600 25px "Josefin Sans", sans-serif;
+}
+
+.formLink input[type=text]
+{
+    width: 80%;
+    height: 7%;
+    border: none;
+    border-radius: 5px;
+    background: var(--white);
+    padding: 0 5px;
+    box-shadow: 3px 3px 1px #555;
+}
+
+.formLink input[type=text]:focus
+{
+    outline: none;
+}
+
+.formLink input[type=color]
+{
+    border: none;
+    background: transparent;
+}
+
+.formLink input[type=range]
+{
+    cursor: pointer;
+}
+
+.formLink div label
+{
+    font-family: 'Balsamiq Sans';
+    color: var(--fonts);
+    margin: 0 10px;
+}
+
+.formLink .button
+{
+    width: 50%;
+    height: 7%;
+    background: var(--green);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Balsamiq Sans';
+    color: var(--fonts);
+    font-size: 120%;
+    box-shadow: 3px 3px 1px #555;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+.formLink .button:hover
+{
+    box-shadow: 5px 5px 5px #555;
+    transition: .1s ease-in-out;
+}
+
+.formLink .button:active
+{
+    box-shadow: 0px 0px 0px #555;
+}

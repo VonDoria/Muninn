@@ -1,0 +1,26 @@
+@import "global.css";
+
+@media only screen and (max-width: 1400px) {
+    .clock {
+        display: none;
+    }
+}
+
+.clock {
+    position: absolute;
+    top: 1vh;
+    left: 1vw;
+    color: var(--white);
+    font-size: 15vh;
+    font-family: Helvetica, Arial, sans-serif;
+    border-radius: 30px;
+    transition: .5s ease-in-out;
+    padding: 0 1%;
+    letter-spacing: -10px;
+    user-select: none;
+}
+
+.clock:hover
+{
+    background: #00000033;
+}

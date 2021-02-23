@@ -1,0 +1,186 @@
+@import "global.css";
+
+.linkContent
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--notes);
+}
+
+.linkContent .content
+{
+    height: 90%;
+    width: 100%;
+    position: relative;
+    top: 0;
+    padding-top: 5%;
+    overflow-y: auto;
+    border: solid 1px #555;
+}
+
+.linkContent .content::-webkit-scrollbar {
+    display: none;
+  }
+
+.linkContent .content a
+{
+    height: 70px;
+    width: 90%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 600 25px "Josefin Sans", sans-serif;
+    text-decoration: none;
+    margin: 10px auto;
+    border-style: solid;
+    cursor: grab;
+    box-shadow: -15px 15px 3px -6px #888;
+    transition: .5s;
+}
+
+.linkContent .content a:hover
+{
+    box-shadow: 0px 0px #555;
+    transform: scale(.95);
+}
+
+.linkContent .content a:active
+{
+    cursor: grabbing;
+}
+
+.linkContent .buttons
+{
+    height: 10%;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.linkContent .buttons .deleteLink
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background: var(--red);
+    color: var(--fonts);
+    width: 40px;
+    height: 40px;
+    box-shadow: 0px 0px 10px #555;
+    transition: .5s ease-in-out;
+}
+
+.linkContent .buttons .deleteLink div
+{
+    position: absolute;
+    border-radius: 50px;
+    width: 2.5vw;
+    height: 2.5vw;
+}
+
+.linkContent .buttons .deleteLink:hover
+{
+    box-shadow: 0px 0px 60px 20px var(--red);
+    transition: .1s ease-in-out;
+}
+
+.linkContent .buttons .crateLink
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background: var(--green);
+    color: var(--fonts);
+    width: 40px;
+    height: 40px;
+    box-shadow: 0px 0px 10px #555;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+.linkContent .buttons .crateLink:hover
+{
+    box-shadow: 0px 0px 20px #555;
+    transition: .1s ease-in-out;
+}
+
+.linkContent .buttons .crateLink:active
+{
+    box-shadow: 0px 0px 0px #555;
+}
+
+.linkContent .buttons div:first-child + div
+{
+    width: 50%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkContent .buttons  div .select
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 3px 3px 2px #555;
+    overflow: hidden;
+    user-select: none;
+    /* transition: .5s ease-in-out; */
+}
+
+.linkContent .buttons  div .select:hover
+{
+    height: fit-content;
+    transform: translateY(35%);
+    box-shadow: 3px 3px 30px 10px #555;
+}
+
+.linkContent .buttons  div .select div, input, span
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3.6vh;
+    user-select: none;
+    background: var(--white);
+}
+
+.linkContent .buttons  div .select div
+{
+    border-top: solid 2px #ccc;
+    cursor: grab;
+}
+
+.linkContent .buttons  div .select div:active
+{
+    cursor: grabbing;
+}
+
+.linkContent .buttons  div .select div:hover
+{
+    background: var(--whiteShadow);
+}
+
+.linkContent .buttons  div .select input
+{
+    border: none;
+    padding: 0 5px;
+}
+
+.linkContent .buttons  div .select input:focus
+{
+    outline: none;
+}

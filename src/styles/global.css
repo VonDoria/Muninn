@@ -1,0 +1,24 @@
+
+:root 
+{
+    --black: #000000;
+    --white: #ffffff;
+    --transparent: #00000070;
+    --shadow: #ffffffe1;
+    --content: #ffffff94;
+    --whiteShadow: #b9b9b9;
+    --green: #00e676;
+    --red: #f44336;
+    --notes: #c4c4c436;
+    --links: #fefefeb7;
+    --fonts: #ffffffdc;
+    --form: #3f51b5;
+    --icons: #3b3b3b98;
+}
+
+*
+{
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 0;
+}
