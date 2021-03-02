@@ -37,7 +37,7 @@ export default function Todo()
     function mount() 
     {
         var listMenu = Object.keys(todo).map((element, index) => {
-            if(element == "Today")
+            if(element === "Today")
             {
                 return <div key={index} onClick={() => setCurrentMenu(element)}>{element}</div>
             }else{
@@ -66,9 +66,9 @@ export default function Todo()
             localStorage.setItem("todoList", JSON.stringify(todo));
             mount();
         }else{
-            var copy = todo;
-            delete copy[event.target.parentElement.id];
-            setTodo(copy);
+            var todoCopy = todo;
+            delete todoCopy[event.target.parentElement.id];
+            setTodo(todoCopy);
             localStorage.setItem("todoList", JSON.stringify(todo));
             mount();
         }
@@ -107,12 +107,12 @@ export default function Todo()
 
     useEffect(() => {
         mount();
-    }, [currentMenu])
+    }, [currentMenu]); //eslint-disable-line
 
     useEffect(() => {
         checkList();
         setTimeout(() => mount(), 1000);
-    }, []);
+    }, []); //eslint-disable-line
 
     return (
         <Fragment>
