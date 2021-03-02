@@ -4,7 +4,7 @@ import Links from './components/Links';
 // import Settings from './components/Settings';
 // import Pomodoro from './components/Pomodoro';
 import Search from './components/Search';
-// import Todo from './components/Todo';
+import Todo from './components/Todo';
 // import Wether from './components/Wether';
 import Notes from './components/Notes';
 // import Toggle from './components/Toggle';
@@ -26,7 +26,7 @@ export default class App extends Component
         {/* <Settings></Settings> */}
         {/* <Pomodoro></Pomodoro> */}
         <Search></Search>
-        {/* <Todo></Todo> */}
+        <Todo></Todo>
         {/* <Wether></Wether> */}
         <Notes></Notes>
         {/* <Toggle></Toggle> */}

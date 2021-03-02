@@ -109,11 +109,6 @@
     padding: 0 5px;
 }
 
-.formLink .top div .select input:focus
-{
-    outline: none;
-}
-
 .formLink .top .preview
 {
     width: 80%;
@@ -136,11 +131,6 @@
     background: var(--white);
     padding: 0 5px;
     box-shadow: 3px 3px 1px #555;
-}
-
-.formLink input[type=text]:focus
-{
-    outline: none;
 }
 
 .formLink input[type=color]

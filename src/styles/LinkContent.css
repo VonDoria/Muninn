@@ -179,8 +179,3 @@
     border: none;
     padding: 0 5px;
 }
-
-.linkContent .buttons  div .select input:focus
-{
-    outline: none;
-}
