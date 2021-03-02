@@ -10,11 +10,11 @@ export default function Todo()
 
     function checkList()
     {
-        if(localStorage.getItem("todoList") == null)
+        if(localStorage.getItem("todoList") === null)
         {
             console.log("Lista de todo não encontrada");
             localStorage.setItem("todoList", '{ "Today": [] }');
-            if(localStorage.getItem("todoList") != null) 
+            if(localStorage.getItem("todoList") !== null) 
             {
                 console.log("Lista de todo criada");
                 let todoList = localStorage.getItem("todoList");
@@ -59,7 +59,7 @@ export default function Todo()
     }
 
     const deleteTodo = (event) => {
-        if(event.target.parentElement.className == "Task")
+        if(event.target.parentElement.className === "Task")
         {
             var copy = todo[currentMenu].splice(event.target.parentElement.key, 1);
             setTodo(copy);
@@ -84,9 +84,9 @@ export default function Todo()
     }
 
     const create = (event) => {
-        if(event.key === "Enter" && event.target.value != '')    
+        if(event.key === "Enter" && event.target.value !== '')    
         {
-            if(event.target.parentElement.className == "todoContant")
+            if(event.target.parentElement.className === "todoContant")
             {
                 setTodo(todo[currentMenu].push({
                     text: event.target.value,
