@@ -1,3 +1,4 @@
+import { List } from '@material-ui/core';
 import React, { Component, Fragment } from 'react';
 import '../styles/Notes.css'
 
@@ -92,8 +93,8 @@ export default class Notes extends Component
         localStorage.setItem("noteList", storageList);
         element.target.parentElement.parentElement.parentElement.style.transform = "scale(0)";
         setTimeout(() => {
-            element.target.parentElement.parentElement.parentElement.style.display = "none";
-            this.updateNotes();
+            // element.target.parentElement.parentElement.parentElement.style.display = "none";
+            // this.updateNotes();
         }, 500);
     }
 
@@ -121,16 +122,22 @@ export default class Notes extends Component
                     <div className="hide">
                         <div className="title" onClick={this.open} >Notes</div>
                         <div className="content" id="content">
-                            {this.state.elements}
-                            <div className="newNote">
-                                <div className="plus">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="5vh" height="5vh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            {/* {this.state.elements} */}
+                            <div className="column">
+                                <div className="newNote">
+                                    <div className="plus">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="5vh" height="5vh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                                    </div>
+                                    <div className="form">
+                                        <textarea maxlength="200"></textarea>
+                                        <div onClick={this.createNote} className="button">Create</div>
+                                    </div>
                                 </div>
-                                <div className="form">
-                                    <textarea maxlength="200"></textarea>
-                                    <div onClick={this.createNote} className="button">Create</div>
-                                </div>
+
                             </div>
+                            <div className="column"></div>
+                            <div className="column"></div>
+                            <div className="column"></div>
                         </div>
                     </div>                    
                 </div>

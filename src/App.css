@@ -1,9 +1,9 @@
-/* 
+
 .appContainer
 {
-    height: 100%;
-    width: 100%;
-    display: grid;
+    /* height: 100vh;
+    width: 100vw; */
+    /* display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 3fr 1fr 5fr 1fr 2fr;
-} */
+    grid-template-rows: 3fr 1fr 5fr 1fr 2fr; */
+}

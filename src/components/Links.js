@@ -43,7 +43,7 @@ export default class Links extends Component
         }
     }
 
-    componentWillMount()
+    componentDidMount()
     {
         this.checkList();
     }
@@ -79,7 +79,7 @@ export default class Links extends Component
                 <div className="linksContainer">
                     <div className="ear" onClick={this.open}>
                         <div className="svgContainer">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-right"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevrons-right"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg>
                         </div>
                     </div>
                     <FormLink className="formLink" selectList={this.state.links} reRender={this.reload}></FormLink>

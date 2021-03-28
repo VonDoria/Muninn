@@ -6,7 +6,7 @@ import Links from './components/Links';
 import Search from './components/Search';
 import Todo from './components/Todo';
 // import Wether from './components/Wether';
-import Notes from './components/Notes';
+import NewNotes from './components/NewNotes';
 // import Toggle from './components/Toggle';
 
 export default class App extends Component 
@@ -28,7 +28,7 @@ export default class App extends Component
         <Search></Search>
         <Todo></Todo>
         {/* <Wether></Wether> */}
-        <Notes></Notes>
+        <NewNotes></NewNotes>
         {/* <Toggle></Toggle> */}
       </div>
     );

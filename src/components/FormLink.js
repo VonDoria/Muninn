@@ -77,7 +77,7 @@ export default function FormLink(props)
         <Fragment>
             <div className="formLink">
                 <div className="closeForm" onClick={closeForm}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="90%" height="90%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="90%" height="90%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </div>
                 <div className="top">
                 <div>
@@ -92,19 +92,19 @@ export default function FormLink(props)
                 <input type="text" className="title" placeholder="Name" onChange={attElement} ></input>
                 <input type="text" className="link" placeholder="Link" onChange={attElement} ></input>
                 <div>
-                    <label for="color">Font-Color</label>
+                    <label htmlFor="color">Font-Color</label>
                     <input id="color" type="color" className="color" onChange={attElement} />
                 </div>
                 <div>
-                    <label for="background">Background-Color</label>
+                    <label htmlFor="background">Background-Color</label>
                     <input id="background" type="color" className="background" onChange={attElement} />
                 </div>
                 <div>
-                    <label for="borderColor">Border-Color</label>
+                    <label htmlFor="borderColor">Border-Color</label>
                     <input id="borderColor" type="color" className="borderColor" onChange={attElement} />
                 </div>
                 <div>
-                    <label for="border">Border-Width</label>
+                    <label htmlFor="border">Border-Width</label>
                     <input id="border" type="range" min="0" max="10" className="border" onChange={attElement} />
                 </div>
                 <div className="button" onClick={submmit}>Create</div>

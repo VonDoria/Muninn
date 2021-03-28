@@ -148,7 +148,7 @@
     text-decoration: overline;
 }
 
-.todoContant .Task > button
+.todoContant .Task > div
 {
     height: 20px;
     width: 20px;
@@ -162,7 +162,7 @@
     cursor: pointer;
 }
 
-.todoContant .Task > button:hover
+.todoContant .Task > div:hover
 {
     background: var(--red);
 }
@@ -192,4 +192,13 @@
 .todoContant > input:hover
 {
     box-shadow: 3px 3px #555;
+}
+
+@media only screen and (max-width: 600px)
+{
+    .todoContant 
+    {
+        right: 5%;
+        width: 90%;
+    }
 }

@@ -10,6 +10,27 @@ export default function Todo()
 
     function checkList()
     {
+        if(localStorage.getItem("todoEnuns") === null)
+        {
+            console.log("Lista de todo não encontrada");
+            localStorage.setItem("todoEnuns", '{ "Today": [] }');
+            if(localStorage.getItem("todoEnuns") !== null) 
+            {
+                console.log("Lista de todo criada");
+                let todoList = localStorage.getItem("todoEnuns");
+                todoList = JSON.parse(todoList);
+                console.log(todoList);
+                setTodo(todoList);
+            }
+        }
+        else{
+            let todoList = localStorage.getItem("todoEnuns");
+            if(todoList !== "" && todoList != null)
+            {
+                todoList = JSON.parse(todoList);
+                setTodo(todoList);
+            }
+        }
         if(localStorage.getItem("todoList") === null)
         {
             console.log("Lista de todo não encontrada");
@@ -36,41 +57,48 @@ export default function Todo()
 
     function mount() 
     {
-        var listMenu = Object.keys(todo).map((element, index) => {
+        let todoList = localStorage.getItem("todoList");
+        todoList = JSON.parse(todoList);
+
+        var listMenu = Object.keys(todoList).map((element, index) => {
             if(element === "Today")
             {
                 return <div key={index} onClick={() => setCurrentMenu(element)}>{element}</div>
             }else{
-                return <div key={index} id={element} onClick={() => setCurrentMenu(element)}>{element}<button onClick={deleteTodo}><img src="/close.svg" alt="Delete Todo" /></button></div>
+                return <div key={index} id={element} onClick={() => setCurrentMenu(element)}>{element}<button onClick={() => deleteTodo(element)}><img src="/close.svg" alt="Delete Todo" /></button></div>
             }
         });
         setMenuList(listMenu);
-        console.log(todo);
-        var listTodo = todo[currentMenu].map((element, index) => {
+        var listTodo = todoList[currentMenu].map((element, index) => {
             return (
-                <div key={index} className="Task">
-                    <input type="checkbox" id={`todo${index}`} checked={element.checked} onChange={changeStatus} />
+                <div key={index} id={`todo${index}`} className="Task">
+                    <input type="checkbox" id={`checkTodo${index}`} checked={element.checked} onChange={changeStatus} />
                     <label htmlFor={`todo${index}`} >{element.text}</label>
-                    <button onClick={deleteTodo}><img src="/close.svg" alt="Delete Todo" /></button>
+                    <div onClick={() => deleteTodo(`todo${index}`)}><img src="/close.svg" alt="Delete Todo" /></div>
                 </div>
             );
         });
         setCurrentList(listTodo);
     }
 
-    const deleteTodo = (event) => {
-        if(event.target.parentElement.className === "Task")
+    function deleteTodo(id)
+    {
+        let todoList = localStorage.getItem("todoList");
+        todoList = JSON.parse(todoList);
+        debugger;
+        var element = document.querySelector(`#${id}`);
+        if(element.className === "Task")
         {
-            var copy = todo[currentMenu].splice(event.target.parentElement.key, 1);
+            var copy = todoList[currentMenu].splice(element.key, 1);
             setTodo(copy);
-            localStorage.setItem("todoList", JSON.stringify(todo));
-            mount();
+            localStorage.setItem("todoList", JSON.stringify(todoList));
+            // mount();
         }else{
-            var todoCopy = todo;
-            delete todoCopy[event.target.parentElement.id];
+            var todoCopy = todoList;
+            delete todoCopy[id];
             setTodo(todoCopy);
-            localStorage.setItem("todoList", JSON.stringify(todo));
-            mount();
+            localStorage.setItem("todoList", JSON.stringify(todoList));
+            // mount();
         }
         console.log(todo);
     }
@@ -84,34 +112,36 @@ export default function Todo()
     }
 
     const create = (event) => {
+        let todoList = localStorage.getItem("todoList");
+        todoList = JSON.parse(todoList);
+
         if(event.key === "Enter" && event.target.value !== '')    
         {
             if(event.target.parentElement.className === "todoContant")
             {
-                setTodo(todo[currentMenu].push({
+                setTodo(todoList[currentMenu].push({
                     text: event.target.value,
                     checked: false
                 }));
-                localStorage.setItem("todoList", JSON.stringify(todo));
+                localStorage.setItem("todoList", JSON.stringify(todoList));
                 event.target.value = '';
-                mount();
+                // mount();
             }else{
-                var copy = todo[event.target.value.replace(/ /g, "_")] = [];
+                var copy = todoList[event.target.value.replace(/ /g, "_")] = [];
                 setTodo(copy);
-                localStorage.setItem("todoList", JSON.stringify(todo));
+                localStorage.setItem("todoList", JSON.stringify(todoList));
                 event.target.value = '';
-                mount();
+                // mount();
             }
         }
     }
 
     useEffect(() => {
         mount();
-    }, [currentMenu]); //eslint-disable-line
+    }, [currentMenu, todo]); //eslint-disable-line
 
     useEffect(() => {
         checkList();
-        setTimeout(() => mount(), 1000);
     }, []); //eslint-disable-line
 
     return (
