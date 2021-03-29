@@ -3,11 +3,11 @@
 
 .notesContainer
 {
-    width: 70vw;
+    width: 50vw;
     height: 5vh;
     position: absolute;
     top: 2vh;
-    left: 15vw;
+    left: 25vw;
     border-radius: 10px;
     transition: .5s;
 }
@@ -16,7 +16,7 @@
 {
     border-radius: 10px;
     width: 100%;
-    height: 2rem;
+    height: 45px;
     display: grid;
     grid-template-rows: 1fr 12fr;
     overflow: hidden;
@@ -33,7 +33,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    min-height: 5vh;
+    min-height: 45px;
     height: 100%;
     padding: 0 3vw;
     cursor: pointer;
@@ -67,7 +67,7 @@
 
 .newNote
 {
-    width: 200px;
+    width: 95%;
     height: 100px;
     transform-style: preserve-3d;
     transition: all ease 1s;
@@ -154,7 +154,7 @@
 
 .noteContainer
 {
-    width: 200px;
+    width: 95%;
     min-height: 100px;
     height: fit-content;
     border-radius: 5px;
