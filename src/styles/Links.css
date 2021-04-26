@@ -6,7 +6,7 @@
     top: 20vh;
     left: 0vw;
     transform: translateX(-100%);
-    height: 60vh;
+    height: 65vh;
     width: 20vw;
     min-width: 240px;
     background: var(--links);
@@ -19,7 +19,7 @@
 .linksContainerOpened
 {
     transform: translateX(0);
-    width: 20vw;
+    width: 23vw;
 }
 
 .ear
@@ -28,7 +28,7 @@
     top: 0;
     left: 100%;
     height: 65px;
-    width: 35px;
+    width: 30px;
     background: var(--links);
     display: flex;
     align-items: center;

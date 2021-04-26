@@ -6,7 +6,6 @@ export default function Todo()
     const closeTodo = () => {
         document.querySelector('.todoContant').classList.toggle('todoClose');
     }
-
     return (
         <Fragment>
             <div className="todoContainer" onClick={closeTodo}>doit</div>

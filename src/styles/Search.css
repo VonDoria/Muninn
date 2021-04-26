@@ -4,11 +4,11 @@
 .searchArea
 {
     position: absolute;
-    bottom: 10vh;
-    left: 35vw;
+    top: 2vh;
+    right: 2vw;
     background: transparent;
     transition: .5s;
-    width: 30vw;
+    width: 22vw;
     height: 5vh;
     border-radius: 10px;
     display: flex;
@@ -35,7 +35,7 @@
     border: none;
     background: transparent;
     margin: auto 3%;
-    color: var(--fonts);
+    color: var(--black);
     font-family: 'Balsamiq Sans';
 }
 

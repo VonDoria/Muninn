@@ -24,12 +24,9 @@ export default class App extends Component
         <Clock></Clock>
         <Links></Links>
         {/* <Settings></Settings> */}
-        {/* <Pomodoro></Pomodoro> */}
         <Search></Search>
         <Todo></Todo>
-        {/* <Wether></Wether> */}
         <Notes></Notes>
-        {/* <Toggle></Toggle> */}
       </div>
     );
   }
