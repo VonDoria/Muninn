@@ -185,7 +185,7 @@
 .noteContainer .tools:hover
 {
     width: 98%;
-    height: 97%;
+    height: 90px;
     background: var(--white);
 }
 

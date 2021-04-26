@@ -18,9 +18,6 @@
     padding: 0 1%;
     letter-spacing: -10px;
     user-select: none;
-}
-
-.clock:hover
-{
     background: #00000033;
 }
+
