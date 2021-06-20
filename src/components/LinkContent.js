@@ -36,10 +36,12 @@ export default function LinkContent(props)
     }
 
     const createElements = () => {
-        let link = linkList[showMenu].map((element, index) => {
-            return (<a id={element.name} title="link" target="_blank" rel="noopener noreferrer" draggable="true" key={index} href={element.link} style={element.style}>{element.name}</a>)
-        });
-        setRenderList(link);
+        if(!!linkList){
+            let link = linkList[showMenu].map((element, index) => {
+                return (<a id={element.name} title="link" target="_blank" rel="noopener noreferrer" draggable="true" key={index} href={element.link} style={element.style}>{element.name}</a>)
+            });
+            setRenderList(link);
+        }
     }
 
     function delay(tmp)
