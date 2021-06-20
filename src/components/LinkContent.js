@@ -121,7 +121,7 @@ export default function LinkContent(props)
                     <div>
                         <div className="select">
                             <span id="currentLink">{showMenu}</span>
-                            {populateSelect(Object.keys(linkList))}
+                            {populateSelect(Object.keys(linkList | {}))}
                             <input placeholder="New Page" onKeyUp={click} />
                         </div>
                     </div>
