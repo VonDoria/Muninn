@@ -15,7 +15,8 @@ export default function LinkContent(props)
 
     // -----------------------------------------------------------------------------------------------------------------
 
-    const populateSelect = list => {
+    const populateSelect = () => {
+        const list = Object.keys(linkList)
         return (list.map((item, index) => {
             return (<div id={item} key={index} title="tab" draggable="true" onClick={() => setShowMenu(item)} >{item}</div>);
         }));
@@ -123,7 +124,7 @@ export default function LinkContent(props)
                     <div>
                         <div className="select">
                             <span id="currentLink">{showMenu}</span>
-                            {populateSelect(Object.keys(linkList | {}))}
+                            {populateSelect()}
                             <input placeholder="New Page" onKeyUp={click} />
                         </div>
                     </div>
