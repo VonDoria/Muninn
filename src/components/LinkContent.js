@@ -6,12 +6,10 @@ export default function LinkContent(props)
     // ref={elem => bin = elem}
     // const bin = React.createRef();
 
-    let linkData = localStorage.getItem("linkList");
-    linkData = JSON.parse(linkData);
 
     const [showMenu, setShowMenu] = useState('Main');
     const [renderList, setRenderList] = useState([]);
-    const [linkList, setLinkList] = useState(linkData);  //eslint-disable-line
+    const [linkList, setLinkList] = useState('');  //eslint-disable-line
 
     // -----------------------------------------------------------------------------------------------------------------
 
@@ -104,9 +102,19 @@ export default function LinkContent(props)
         addGlobalEventListener();
         createElements();
     }, [showMenu]);  //eslint-disable-line
+    
+    useEffect(() => {
+        console.log("linkList");
+        console.log(linkList);
+        createElements();
+    }, [linkList]);  //eslint-disable-line
 
     useEffect(() => {
-        createElements();
+        let linkData = localStorage.getItem("linkList");
+        if(linkData){
+            linkData = JSON.parse(linkData);
+            setLinkList(linkData);
+        }
     }, []);  //eslint-disable-line
 
     
