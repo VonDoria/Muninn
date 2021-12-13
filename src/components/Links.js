@@ -16,7 +16,7 @@ export default class Links extends Component
 
     checkList()
     {
-        if(localStorage.getItem("linkList") == null || localStorage.getItem("linkList") == '')
+        if(localStorage.getItem("linkList") === null || localStorage.getItem("linkList") === '')
         {
             console.log("Lista de links não encontrada");
             localStorage.setItem("linkList", '{ "Main": [] }');
